@@ -22,7 +22,7 @@ public class OnBoardingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onbording);
-        enableEdgeToEdge()
+        enableEdgeToEdge();
 
         Button next = findViewById(R.id.next);
         ViewPager2 pager = findViewById(R.id.viewpager);
