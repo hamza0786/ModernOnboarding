@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -21,10 +22,7 @@ public class OnBoardingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onbording);
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
-
-        if (getSupportActionBar() != null)
-            getSupportActionBar().hide();
+        enableEdgeToEdge()
 
         Button next = findViewById(R.id.next);
         ViewPager2 pager = findViewById(R.id.viewpager);
