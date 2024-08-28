@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.activity.enableEdgeToEdge;
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -22,7 +22,7 @@ public class OnBoardingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onbording);
-        enableEdgeToEdge();
+        EdgeToEdge.enable(this);
 
         Button next = findViewById(R.id.next);
         ViewPager2 pager = findViewById(R.id.viewpager);
