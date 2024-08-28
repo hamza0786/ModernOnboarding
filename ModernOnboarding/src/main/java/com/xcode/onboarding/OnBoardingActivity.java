@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.activity.EdgeToEdge;
+import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -50,7 +51,7 @@ public class OnBoardingActivity extends AppCompatActivity {
                     next.setText("Finish");
                 else
                     next.setText("Next");
-                dots[position].setTextColor(Color.BLUE);
+                dots[position].setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.accent_1));
             }
         });
 
