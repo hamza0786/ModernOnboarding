@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.annotation.Nullable;
 import androidx.activity.EdgeToEdge;
 import androidx.core.content.ContextCompat;
@@ -24,7 +26,8 @@ public class OnBoardingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onbording);
         EdgeToEdge.enable(this);
-
+        hideBottomBar();
+            
         Button next = findViewById(R.id.next);
         ViewPager2 pager = findViewById(R.id.viewpager);
         LinearLayout indicator = findViewById(R.id.indicator);
@@ -67,5 +70,13 @@ public class OnBoardingActivity extends AppCompatActivity {
             } else
                 pager.setCurrentItem(currentPage + 1);
         });
+    }
+
+    private void hideBottomBar() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            WindowInsetsControllerCompat insetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+            insetsController.hide(WindowInsetsCompat.Type.navigationBars());
+            insetsController.hide(WindowInsetsCompat.Type.statusBars());
+        }
     }
 }
